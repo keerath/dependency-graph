@@ -20,13 +20,23 @@ def find_parallelizable_nodes(graph: nx.DiGraph):
 ## Look at graph.png for a visual representation of this graph
 
 if __name__ == '__main__':
-    graph = nx.DiGraph()
-    graph.add_nodes_from(range(0, 6))
-    graph.add_edge(5, 2)
-    graph.add_edge(5, 0)
-    graph.add_edge(4, 0)
-    graph.add_edge(4, 1)
-    graph.add_edge(2, 3)
-    graph.add_edge(3, 1)
-    par_nodes = find_parallelizable_nodes(graph)
-    print(par_nodes)
+    ## Look at graph.png for a visual representation of this graph
+    graph1 = nx.DiGraph()
+    graph1.add_nodes_from(range(0, 6))
+    graph1.add_edge(5, 2)
+    graph1.add_edge(5, 0)
+    graph1.add_edge(4, 0)
+    graph1.add_edge(4, 1)
+    graph1.add_edge(2, 3)
+    graph1.add_edge(3, 1)
+    print(find_parallelizable_nodes(graph1))
+
+    ## Look at IMG_1788.jpg for a visual representation of this graph
+    graph2 = nx.DiGraph()
+    graph2.add_nodes_from(['A', 'B', 'C', 'D', 'E', 'G', 'H'])
+    graph2.add_edge('A', 'C')
+    graph2.add_edge('A', 'D')
+    graph2.add_edge('A', 'E')
+    graph2.add_edge('B', 'G')
+    graph2.add_edge('B', 'H')
+    print(find_parallelizable_nodes(graph2))
